@@ -92,3 +92,16 @@ const obj = {
 for (value of obj) {
     console.log(value)
 }
+
+// You can also choose to call the symbol iterator without the of keyword as shown below
+const iter = obj[Symbol.iterator]();
+
+while(true) {
+    let x = iter.next();
+    if(x.done) break;
+    console.log(x.value)
+}
+
+for (value of obj) {
+    console.log(value)
+}
