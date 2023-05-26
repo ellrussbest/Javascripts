@@ -25,8 +25,8 @@ function brr() {
 }
 
 
-const arr = new brr() // this will create __protype__ for the new object
+const arr = new brr() // this will create __pr__ for the new object which points to the pr object of the parent function
 
 console.log(arr.__pr__ === brr.pr) // evaluates to true
 
-console.log(arr.abstract) // evaluates to undefined
+console.log(arr.pr) // evaluates to undefined
