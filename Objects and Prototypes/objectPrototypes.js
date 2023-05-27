@@ -1,4 +1,6 @@
 // Prototypes
+// We can use prototypes to create behaviors that apply to multiple objects
+// This adds another level of abstraction
 // Whenever you create a function it will automatically create a prototype
 // object within the function e.g.
 function foo() {}
