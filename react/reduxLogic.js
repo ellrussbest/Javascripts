@@ -36,7 +36,7 @@ function asyncIncrement() {
 }
 
 // Create the store with the thunk middleware
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducer, {}, applyMiddleware(thunk));
 
 // Use the store in any component
 function MyComponent() {
