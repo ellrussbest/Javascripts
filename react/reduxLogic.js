@@ -1,3 +1,28 @@
+/**
+The following is a way of how you can structure your redux project
+
+Root Project folder
+  Public
+  src
+    components
+    hooks
+      useActions.ts
+      useTypedSelector.ts
+     state
+      action-creators
+        index.ts
+       action-types
+        index.ts
+       actions
+        index.ts
+       reducers
+        repositoryReducer.ts
+        index.ts
+       index.ts
+       store.ts
+      index.tsx
+**/
+
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -42,11 +67,13 @@ const store = createStore(reducer, {}, applyMiddleware(thunk));
 function MyComponent() {
   const { count } = store.getState();
   return (
-    <div>
-      Count: {count}
-      <button onClick={() => store.dispatch(increment())}>+</button>
-      <button onClick={() => store.dispatch(decrement())}>-</button>
-      <button onClick={() => store.dispatch(asyncIncrement())}>Async +</button>
-    </div>
+    <Provider store={store}>
+      <div>
+        Count: {count}
+        <button onClick={() => store.dispatch(increment())}>+</button>
+        <button onClick={() => store.dispatch(decrement())}>-</button>
+        <button onClick={() => store.dispatch(asyncIncrement())}>Async +</button>
+      </div>
+    </Provider>
   );
 }
