@@ -105,3 +105,24 @@ while(true) {
 for (value of obj) {
     console.log(value)
 }
+
+// A more traditional approach would be as follows
+const myObject = {
+  data: ['apple', 'banana', 'orange'],
+  [Symbol.iterator]() {
+    let index = 0;
+    return {
+      next: () => {
+        if (index < this.data.length) {
+          return { value: this.data[index++], done: false };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  }
+};
+
+for (let item of myObject) {
+  console.log(item);
+}
