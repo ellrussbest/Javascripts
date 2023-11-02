@@ -65,3 +65,6 @@ arr3 = [5, 2, 8, 1, 7, 4, 6, 3]
 arr3 = [64, 34, 25, 12, 22, 11, 90]
 bubbleSort(arr3)
 console.log(arr3)
+
+// Floyd's Tortoise and Hare Algorithm
+
